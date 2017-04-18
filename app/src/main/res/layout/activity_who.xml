@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="0dp"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="146dp"
+        android:layout_marginBottom="20dp"
+        android:background="@android:color/holo_orange_light"
+        android:elevation="10dp"
+        android:orientation="horizontal"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="30dp"
+            android:paddingBottom="80dp"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/antes"
+                android:layout_width="match_parent"
+                android:layout_height="77dp"
+                android:gravity="bottom"
+                android:text="¡ Un momento !"
+                android:textAlignment="center"
+                android:textSize="36sp" />
+
+            <TextView
+                android:id="@+id/antes2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.59"
+                android:gravity="center_vertical"
+                android:text="Necesitamos tu nombre para continuar"
+                android:textAlignment="center"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.36"
+                android:ems="10"
+                android:gravity="bottom"
+                android:hint="Escribe tu nombre aquí"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                android:textColorLink="@android:color/holo_orange_light" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="123dp"
+                android:orientation="horizontal"
+                android:paddingTop="30dp">
+
+                <Button
+                    android:id="@+id/b_seguir"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/holo_orange_light"
+                    android:elevation="0dp"
+                    android:text="Continuar"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
