@@ -3,4 +3,5 @@
     <string name="background">Dogall</string>
     <string name="texto1">Esto es un texto</string>
     <string name="texto2">Esto es otro texto</string>
+    <string name="title_activity_coleccion">ColeccionActivity</string>
 </resources>
