@@ -2,6 +2,8 @@ package es.jcgallardo.dogall.dog;
 
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -34,6 +36,22 @@ public class DogsFragment extends Fragment {
         return new DogsFragment();
     }
 
+    private class DogLoadTask extends AsyncTask<Void, Void, Cursor>{
+        @Override
+        protected Cursor doInBackground(Void... voids) {
+            return mDogHelper.getAllRazaPerros();
+        }
+
+        @Override
+        protected void onPostExecute(Cursor cursor) {
+            if (cursor != null && cursor.getCount() > 0) {
+                mDogAdapter.swapCursor(cursor);
+            } else {
+                // Mostrar empty state
+            }
+        }
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -42,16 +60,7 @@ public class DogsFragment extends Fragment {
 
         // referencias UI
         mDogList = (ListView) root.findViewById(R.id.dogs_list);
-
-        // *******************************************
-        //***********************************************
-        //************************************************
-        // SIN TERMINAR
-        // *******************************************
-        //***********************************************
-        //************************************************
-        mDogAdapter = new DogCursorAdapter(getActivity(), null);
-
+        mDogAdapter = new DogCursorAdapter(getActivity(),null);
         mAddButton = (FloatingActionButton) getActivity().findViewById(R.id.fab);
 
         // Setup
@@ -73,6 +82,7 @@ public class DogsFragment extends Fragment {
 
     private void loadDogs() {
         // Cargar datos...
+        new DogLoadTask().execute();
     }
 
 }

@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import es.jcgallardo.dogall.dog.DogsActivity;
+
 public class WhoActivity extends Activity {
     Button b_seguir;
 
@@ -20,7 +22,7 @@ public class WhoActivity extends Activity {
         b_seguir.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent siguiente = new Intent(WhoActivity.this,ColeccionActivity.class);
+                Intent siguiente = new Intent(WhoActivity.this,DogsActivity.class);
                 startActivity(siguiente);
             }
         });

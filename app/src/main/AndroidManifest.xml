@@ -19,10 +19,6 @@
         </activity>
         <activity android:name=".WhoActivity" />
         <activity
-            android:name=".ColeccionActivity"
-            android:label="@string/title_activity_coleccion"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".dogs.DogsActivity"
             android:label="@string/title_activity_dogs"
             android:theme="@style/AppTheme.NoActionBar">

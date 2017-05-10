@@ -14,20 +14,18 @@ public class Dog {
     private String description;
     private String weight;
     private String height;
-    private String legs;
     private String lifeexpectancy;
     private String othernames;
     private String temperament;
     private String photo;
     private String found;
 
-    public Dog(String name, String description, String weight, String height, String legs, String life_expectancy, String other_names, String temperament, String photo) {
-        this.id = UUID.randomUUID().toString();;
+    public Dog(String name, String description, String weight, String height, String life_expectancy, String other_names, String temperament, String photo) {
+        this.id = UUID.randomUUID().toString();
         this.name = name;
         this.description = description;
         this.weight = weight;
         this.height = height;
-        this.legs = legs;
         this.lifeexpectancy = life_expectancy;
         this.othernames = other_names;
         this.temperament = temperament;
@@ -57,10 +55,6 @@ public class Dog {
         return height;
     }
 
-    public String getLegs() {
-        return legs;
-    }
-
 
     public String getLifeexpectancy() {
         return lifeexpectancy;
@@ -86,7 +80,6 @@ public class Dog {
         values.put(DogContract.RazaPerroEntry.DESCRIPTION, description);
         values.put(DogContract.RazaPerroEntry.WEIGHT, weight);
         values.put(DogContract.RazaPerroEntry.HEIGHT, weight);
-        values.put(DogContract.RazaPerroEntry.LEGS, legs);
         values.put(DogContract.RazaPerroEntry.LIFEEXPECTANCY, lifeexpectancy);
         values.put(DogContract.RazaPerroEntry.OTHERNAMES, othernames);
         values.put(DogContract.RazaPerroEntry.TEMPERAMENT, temperament);
