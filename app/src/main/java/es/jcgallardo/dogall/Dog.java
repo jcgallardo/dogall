@@ -1,6 +1,7 @@
 package es.jcgallardo.dogall;
 
 import android.content.ContentValues;
+import android.database.Cursor;
 
 import java.util.UUID;
 
@@ -31,6 +32,13 @@ public class Dog {
         this.temperament = temperament;
         this.photo = photo;
         this.found = "0";
+    }
+
+    public Dog(Cursor cursor) {
+        id = cursor.getString(cursor.getColumnIndex(DogContract.RazaPerroEntry.ID));
+        name = cursor.getString(cursor.getColumnIndex(DogContract.RazaPerroEntry.NAME));
+        description = cursor.getString(cursor.getColumnIndex(DogContract.RazaPerroEntry.DESCRIPTION));
+        photo = cursor.getString(cursor.getColumnIndex(DogContract.RazaPerroEntry.PHOTO));
     }
 
     public String getId() {

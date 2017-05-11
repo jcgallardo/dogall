@@ -99,7 +99,7 @@ public class DogDbHelper extends SQLiteOpenHelper {
      * @param razapId
      * @return
      */
-    public Cursor getLawyerById(String razapId) {
+    public Cursor getDogById(String razapId) {
         return getReadableDatabase().query(
                 DogContract.RazaPerroEntry.TABLE_NAME,
                 null,

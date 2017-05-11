@@ -11,7 +11,7 @@ import es.jcgallardo.dogall.R;
 
 public class DogsActivity extends AppCompatActivity {
 
-    public static final String EXTRA_LAWYER_ID = "extra_dog_id";
+    public static final String EXTRA_DOG_ID = "extra_dog_id";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
