@@ -37,13 +37,12 @@ public class DogDetailFragment extends Fragment {
     private CollapsingToolbarLayout mCollapsingView;
     private TextView mDogName;
     private TextView mDogDescription;
-    //private TextView mDogWeight;
-    //private TextView mDogHheight;
-    //private TextView mDogLifeexpectancy;
-    //private TextView mDogOthernames;
-    //private TextView mDogTemperament;
+    private TextView mDogWeight;
+    private TextView mDogHeight;
+    private TextView mDogLifeexpectancy;
+    private TextView mDogOthernames;
+    private TextView mDogTemperament;
     private ImageView mDogPhoto;
-    //private TextView mDogFound;
 
     private DogDbHelper mDogDbHelper;
 
@@ -76,6 +75,11 @@ public class DogDetailFragment extends Fragment {
         mCollapsingView = (CollapsingToolbarLayout) getActivity().findViewById(R.id.toolbar_layout);
         mDogPhoto = (ImageView) getActivity().findViewById(R.id.iv_avatar);
         mDogName = (TextView) root.findViewById(R.id.tv_name);
+        mDogWeight = (TextView) root.findViewById(R.id.tv_weight);
+        mDogHeight = (TextView) root.findViewById(R.id.tv_height);
+        mDogLifeexpectancy = (TextView) root.findViewById(R.id.tv_lifeexpectancy);
+        mDogOthernames = (TextView) root.findViewById(R.id.tv_othernames);
+        mDogTemperament = (TextView) root.findViewById(R.id.tv_temperament);
         mDogDescription = (TextView) root.findViewById(R.id.tv_description);
 
         mDogDbHelper = new DogDbHelper(getActivity());
@@ -95,6 +99,7 @@ public class DogDetailFragment extends Fragment {
     }
 
     private void showDog(Dog dog) {
+        //System.out.println(dog.toString());
         mCollapsingView.setTitle(dog.getName());
         Glide.with(this)
                 .load(Uri.parse("file:///android_asset/" + dog.getPhoto()))
@@ -102,6 +107,11 @@ public class DogDetailFragment extends Fragment {
                 .into(mDogPhoto);
         mDogDescription.setText(dog.getDescription());
         mDogName.setText(dog.getName());
+        mDogWeight.setText(dog.getWeight());
+        mDogHeight.setText(dog.getHeight());
+        mDogLifeexpectancy.setText(dog.getLifeexpectancy());
+        mDogOthernames.setText(dog.getOthernames());
+        mDogTemperament.setText(dog.getTemperament());
     }
 
     private void showLoadError() {

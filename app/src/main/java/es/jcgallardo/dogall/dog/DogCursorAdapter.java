@@ -39,7 +39,6 @@ public class DogCursorAdapter extends CursorAdapter {
 
     @Override
     public void bindView(View view, final Context context, Cursor cursor) {
-        System.out.println("Hemos entrado en bindView (DogCursorAdapter");
         // Referencias UI.
         TextView nameText = (TextView) view.findViewById(R.id.tv_name);
         final ImageView avatarImage = (ImageView) view.findViewById(R.id.iv_avatar);
@@ -48,11 +47,13 @@ public class DogCursorAdapter extends CursorAdapter {
         String name = cursor.getString(cursor.getColumnIndex(DogContract.RazaPerroEntry.NAME));
         String encontrado = cursor.getString(cursor.getColumnIndex(DogContract.RazaPerroEntry.FOUND));
         String avatarUri;
+        /*
         if (encontrado.equals("1"))
             avatarUri = cursor.getString(cursor.getColumnIndex(DogContract.RazaPerroEntry.PHOTO));
         else
             avatarUri = "no existe";
-
+        */
+        avatarUri = cursor.getString(cursor.getColumnIndex(DogContract.RazaPerroEntry.PHOTO));
 
 
         // Setup.

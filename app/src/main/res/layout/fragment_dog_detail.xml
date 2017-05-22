@@ -2,8 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="72dp"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
     android:layout_marginRight="@dimen/activity_horizontal_margin"
+    android:layout_marginTop="10dp"
     android:orientation="vertical">
 
     <TextView
@@ -12,7 +13,8 @@
         android:layout_marginBottom="8dp"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:text="Nombre de la raza"
-        android:textColor="?colorPrimary" />
+        android:textColor="?colorPrimary"
+        android:textSize="@dimen/detail_subtitle" />
 
     <TextView
         android:id="@+id/tv_name"
@@ -21,13 +23,150 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         tools:text="Nombre de la raza" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:textAlignment="center"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:textAlignment="center">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="Altura"
+                android:textColor="?colorPrimary"
+                android:textSize="@dimen/detail_subtitle" />
+
+            <TextView
+                android:id="@+id/tv_height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                tools:text="Altura aproximada" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:textAlignment="center">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_weight="1"
+                android:text="Peso"
+                android:textColor="?colorPrimary"
+                android:textSize="@dimen/detail_subtitle" />
+
+            <TextView
+                android:id="@+id/tv_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                tools:text="Peso" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:textAlignment="center"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:textAlignment="center">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="Vida"
+                android:textColor="?colorPrimary"
+                android:textSize="@dimen/detail_subtitle" />
+
+            <TextView
+                android:id="@+id/tv_lifeexpectancy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                tools:text="Esperanza de vida" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:textAlignment="center">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="Apodos"
+                android:textColor="?colorPrimary"
+                android:textSize="@dimen/detail_subtitle" />
+
+            <TextView
+                android:id="@+id/tv_othernames"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                tools:text="Otros nombres" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="Temperamento"
+        android:textColor="?colorPrimary"
+        android:textSize="@dimen/detail_subtitle"/>
+
+    <TextView
+        android:id="@+id/tv_temperament"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        tools:text="Temperamento" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:text="Descripción"
-        android:textColor="?colorPrimary" />
+        android:textColor="?colorPrimary"
+        android:textSize="@dimen/detail_subtitle"/>
 
     <TextView
         android:id="@+id/tv_description"

@@ -36,9 +36,14 @@ public class Dog {
 
     public Dog(Cursor cursor) {
         id = cursor.getString(cursor.getColumnIndex(DogContract.RazaPerroEntry.ID));
-        name = cursor.getString(cursor.getColumnIndex(DogContract.RazaPerroEntry.NAME));
-        description = cursor.getString(cursor.getColumnIndex(DogContract.RazaPerroEntry.DESCRIPTION));
         photo = cursor.getString(cursor.getColumnIndex(DogContract.RazaPerroEntry.PHOTO));
+        name = cursor.getString(cursor.getColumnIndex(DogContract.RazaPerroEntry.NAME));
+        weight = cursor.getString(cursor.getColumnIndex(DogContract.RazaPerroEntry.WEIGHT));
+        height = cursor.getString(cursor.getColumnIndex(DogContract.RazaPerroEntry.HEIGHT));
+        lifeexpectancy = cursor.getString(cursor.getColumnIndex(DogContract.RazaPerroEntry.LIFEEXPECTANCY));
+        othernames = cursor.getString(cursor.getColumnIndex(DogContract.RazaPerroEntry.OTHERNAMES));
+        temperament = cursor.getString(cursor.getColumnIndex(DogContract.RazaPerroEntry.TEMPERAMENT));
+        description = cursor.getString(cursor.getColumnIndex(DogContract.RazaPerroEntry.DESCRIPTION));
     }
 
     public String getId() {
