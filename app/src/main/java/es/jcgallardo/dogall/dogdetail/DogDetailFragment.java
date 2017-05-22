@@ -1,6 +1,7 @@
 package es.jcgallardo.dogall.dogdetail;
 
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.media.Image;
 import android.net.Uri;
@@ -29,18 +30,20 @@ import es.jcgallardo.dogall.R;
  * create an instance of this fragment.
  */
 public class DogDetailFragment extends Fragment {
+    private static final String ARG_DOG_ID = "arg_dog_id";
+
     private String mDogId;
 
     private CollapsingToolbarLayout mCollapsingView;
     private TextView mDogName;
     private TextView mDogDescription;
-    private TextView mDogWeight;
-    private TextView mDogHheight;
-    private TextView mDogLifeexpectancy;
-    private TextView mDogOthernames;
-    private TextView mDogTemperament;
+    //private TextView mDogWeight;
+    //private TextView mDogHheight;
+    //private TextView mDogLifeexpectancy;
+    //private TextView mDogOthernames;
+    //private TextView mDogTemperament;
     private ImageView mDogPhoto;
-    private TextView mDogFound;
+    //private TextView mDogFound;
 
     private DogDbHelper mDogDbHelper;
 
@@ -80,6 +83,11 @@ public class DogDetailFragment extends Fragment {
         loadDog();
 
         return root;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // Acciones
     }
 
     private void loadDog() {

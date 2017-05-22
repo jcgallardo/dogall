@@ -26,6 +26,7 @@ import es.jcgallardo.dogall.dogdetail.DogDetailActivity;
  * create an instance of this fragment.
  */
 public class DogsFragment extends Fragment {
+    private static final int REQUEST_UPDATE_DELETE_DOG = 200;
     private DogDbHelper mDogHelper;
 
     private ListView mDogList;
@@ -69,38 +70,38 @@ public class DogsFragment extends Fragment {
         // Setup
         mDogList.setAdapter(mDogAdapter);
 
+        // Eventos
+        mDogList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
+                Cursor currentItem = (Cursor) mDogAdapter.getItem(i);
+                String currentDogId = currentItem.getString(currentItem.getColumnIndex(DogContract.RazaPerroEntry.ID));
+                showDetailScreen(currentDogId);
+            }
+
+            private void showDetailScreen(String currentDogId) {
+                Intent intent = new Intent(getActivity(), DogDetailActivity.class);
+                intent.putExtra(DogsActivity.EXTRA_DOG_ID, currentDogId);
+                startActivityForResult(intent, REQUEST_UPDATE_DELETE_DOG);
+            }
+
+        });
+
         // Instancia de helper
         mDogHelper = new DogDbHelper(getActivity());
 
         // Carga de datos
         loadDogs();
 
-        // Eventos
-        mDogList.setOnClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
-                Cursor currentItem = (Cursor) mDogAdapter.getItem(i);
-                String currentDogId = currentItem.getString(
-                        currentItem.getColumnIndex(DogContract.RazaPerroEntry.ID));
-
-                showDetailScreen(currentDogId);
-            }
-            private void showDetailScreen(String dogId) {
-                Intent intent = new Intent(getActivity(), DogDetailActivity.class);
-                intent.putExtra(DogsActivity.EXTRA_DOG_ID, dogId);
-                startActivityForResult(intent, REQUEST_UPDATE_DELETE_ID);
-            }
-        });
-
         return root;
     }
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (Activity.RESULT_OK == resultCode) {
             switch (requestCode) {
-                case REQUEST_UPDATE_DELETE_LAWYER:
+                case REQUEST_UPDATE_DELETE_DOG:
                     loadDogs();
                     break;
             }
