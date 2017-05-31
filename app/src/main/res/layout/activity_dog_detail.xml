@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="es.jcgallardo.dogall.dogdetail.DogDetailActivity">
+    tools:context="es.jcgallardo.dogall.dogdetail.DogDetailActivity"
+    android:background="@color/backgound">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"

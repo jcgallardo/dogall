@@ -2,10 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-    android:layout_marginRight="@dimen/activity_horizontal_margin"
-    android:layout_marginTop="10dp"
-    android:orientation="vertical">
+    android:paddingLeft="20dp"
+    android:paddingTop="50dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="30dp"
+    android:orientation="vertical"
+    android:background="@color/backgound">
 
     <TextView
         android:layout_width="wrap_content"
@@ -13,7 +15,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:text="Nombre de la raza"
-        android:textColor="?colorPrimary"
+        android:textColor="@color/primary_text"
         android:textSize="@dimen/detail_subtitle" />
 
     <TextView
@@ -21,7 +23,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/secondary_text"
         tools:text="Nombre de la raza" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="Temperamento"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/detail_subtitle" />
+
+    <TextView
+        android:id="@+id/tv_temperament"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/secondary_text"
+        tools:text="Temperamento" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,7 +51,7 @@
         android:weightSum="2">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
@@ -44,7 +64,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:text="Altura"
-                android:textColor="?colorPrimary"
+                android:textColor="@color/primary_text"
                 android:textSize="@dimen/detail_subtitle" />
 
             <TextView
@@ -52,11 +72,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/secondary_text"
                 tools:text="Altura aproximada" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
@@ -68,17 +89,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:layout_weight="1"
                 android:text="Peso"
-                android:textColor="?colorPrimary"
+                android:textColor="@color/primary_text"
                 android:textSize="@dimen/detail_subtitle" />
 
             <TextView
                 android:id="@+id/tv_weight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/secondary_text"
                 tools:text="Peso" />
         </LinearLayout>
 
@@ -89,12 +109,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:textAlignment="center"
-        android:weightSum="2">
+        android:weightSum="1">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             android:orientation="vertical"
             android:textAlignment="center">
 
@@ -105,7 +125,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:text="Vida"
-                android:textColor="?colorPrimary"
+                android:textColor="@color/primary_text"
                 android:textSize="@dimen/detail_subtitle" />
 
             <TextView
@@ -113,13 +133,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/secondary_text"
                 tools:text="Esperanza de vida" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             android:orientation="vertical"
             android:textAlignment="center">
 
@@ -130,7 +151,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:text="Apodos"
-                android:textColor="?colorPrimary"
+                android:textColor="@color/primary_text"
                 android:textSize="@dimen/detail_subtitle" />
 
             <TextView
@@ -138,41 +159,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/secondary_text"
                 tools:text="Otros nombres" />
         </LinearLayout>
 
     </LinearLayout>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:text="Temperamento"
-        android:textColor="?colorPrimary"
-        android:textSize="@dimen/detail_subtitle"/>
-
-    <TextView
-        android:id="@+id/tv_temperament"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        tools:text="Temperamento" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginTop="20dp"
         android:text="Descripción"
-        android:textColor="?colorPrimary"
-        android:textSize="@dimen/detail_subtitle"/>
+        android:textAlignment="center"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/detail_subtitle" />
 
     <TextView
         android:id="@+id/tv_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/secondary_text"
         tools:text="Descripción" />
 
 </LinearLayout>

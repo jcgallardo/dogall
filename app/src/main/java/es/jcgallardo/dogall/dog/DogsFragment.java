@@ -65,7 +65,7 @@ public class DogsFragment extends Fragment {
         // referencias UI
         mDogList = (ListView) root.findViewById(R.id.dogs_list);
         mDogAdapter = new DogCursorAdapter(getActivity(),null);
-        mAddButton = (FloatingActionButton) getActivity().findViewById(R.id.fab);
+        mAddButton = (FloatingActionButton) getActivity().findViewById(R.id.camera);
 
         // Setup
         mDogList.setAdapter(mDogAdapter);
