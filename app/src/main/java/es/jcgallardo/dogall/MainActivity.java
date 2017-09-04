@@ -247,7 +247,7 @@ public class MainActivity extends AppCompatActivity {
                         annotateImageRequest.setFeatures(new ArrayList<Feature>() {{
                             Feature labelDetection = new Feature();
                             labelDetection.setType("LABEL_DETECTION");
-                            labelDetection.setMaxResults(10);
+                            labelDetection.setMaxResults(20);
                             add(labelDetection);
                         }});
 
@@ -262,6 +262,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.d(TAG, "created Cloud Vision request object, sending request");
 
                     BatchAnnotateImagesResponse response = annotateRequest.execute();
+                    System.out.println(response);
                     return convertResponseToString(response);
 
                 } catch (GoogleJsonResponseException e) {
