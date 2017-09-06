@@ -47,12 +47,15 @@ public class DogCursorAdapter extends CursorAdapter {
         String encontrado = cursor.getString(cursor.getColumnIndex(DogContract.RazaPerroEntry.FOUND));
         String avatarUri;
 
+        System.out.println(name+": Encontrado: " + encontrado);
+        if (encontrado.equals("1"))
+            avatarUri = cursor.getString(cursor.getColumnIndex(DogContract.RazaPerroEntry.PHOTO));
+        else
+            avatarUri = "notfound.png";
 
-        avatarUri = cursor.getString(cursor.getColumnIndex(DogContract.RazaPerroEntry.PHOTO));
-
-
-        // Setup.
+        // set text
         nameText.setText(name);
+
         Glide
                 .with(context)
                 .load(Uri.parse("file:///android_asset/" + avatarUri))

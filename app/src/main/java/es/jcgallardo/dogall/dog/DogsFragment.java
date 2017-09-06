@@ -2,6 +2,7 @@ package es.jcgallardo.dogall.dog;
 
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.AsyncTask;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import es.jcgallardo.dogall.DogContract;
 import es.jcgallardo.dogall.DogDbHelper;
@@ -75,7 +77,18 @@ public class DogsFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
                 Cursor currentItem = (Cursor) mDogAdapter.getItem(i);
                 String currentDogId = currentItem.getString(currentItem.getColumnIndex(DogContract.RazaPerroEntry.ID));
-                showDetailScreen(currentDogId);
+                String encontrado = currentItem.getString(currentItem.getColumnIndex(DogContract.RazaPerroEntry.FOUND));
+
+                if (encontrado.equals("1"))
+                    showDetailScreen(currentDogId);
+                else{
+                    Context context = getActivity().getApplicationContext();
+                    CharSequence text = "¡Encuentra la raza para ver sus detalles!";
+                    int duration = Toast.LENGTH_SHORT;
+
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                }
             }
 
             private void showDetailScreen(String currentDogId) {
